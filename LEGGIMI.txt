@@ -1,0 +1,20 @@
+SismografoOra - app Android per impostare l'ora della SensorTile.box via USB OTG
+
+COME OTTENERE L'APP (serve Android Studio sul PC, una volta sola)
+1. Scompatta questa cartella e in Android Studio scegli File > Open e seleziona la cartella
+   "SismografoOra". Attendi la sincronizzazione di Gradle (scarica le librerie da Internet).
+   Se Android Studio propone di aggiornare Gradle o il plugin Android, accetta.
+2. Per creare l'APK: Build > Build Bundle(s) / APK(s) > Build APK(s).
+   Il file e' in app/build/outputs/apk/debug/app-debug.apk
+3. Copia l'APK sul telefono e aprilo (Android chiedera' di consentire l'installazione da
+   questa fonte). In alternativa collega il telefono al PC con il debug USB attivo e premi Run.
+
+USO
+1. Collega la scheda al telefono con il cavo OTG (telefono -> OTG -> cavo micro-USB -> scheda).
+2. Premi USER sulla scheda (o riaccendila): si apre una finestra di 15 s.
+3. Nell'app: "Connetti alla scheda" (accetta il permesso USB), poi "Imposta ora".
+   La scheda risponde "OK UTC aaaa-mm-gg hh:mm:ss". "Stato (?)" mostra l'ora attuale.
+4. Scollega. Dopo ~8 s la scheda esce dalla modalita' servizio.
+
+Il telefono invia la sua ora in UTC: il fuso orario non conta. L'ora viene inviata
+all'inizio di un secondo esatto, quindi l'errore e' dell'ordine di decine di millisecondi.
